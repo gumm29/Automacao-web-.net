@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <RootNamespace>projetoC_</RootNamespace>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.9.4" />
+    <PackageReference Include="NUnit" Version="3.13.2" />
+    <PackageReference Include="NUnit3TestAdapter" Version="4.0.0" />
+    <PackageReference Include="Selenium.WebDriver" Version="4.22.0" />
+    <PackageReference Include="SpecFlow" Version="3.9.74" />
+    <PackageReference Include="SpecFlow.NUnit" Version="3.9.74" />
+    <PackageReference Include="SpecFlow.Tools.MsBuild.Generation" Version="3.9.74" />
+    <PackageReference Include="Xunit.Gherkin.Quick" Version="4.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+  <None Update="Features\*.feature">
+    <Generator>SpecFlowSingleFileGenerator</Generator>
+    <LastGenOutput>FeatureFile1.feature.cs</LastGenOutput>
+  </None>
+  <Compile Update="Features\*.feature.cs">
+    <DependentUpon>FeatureFile1.feature</DependentUpon>
+  </Compile>
+</ItemGroup>
+
+</Project>
